@@ -99,7 +99,7 @@
                         <h5 class="site-footer-title mb-4 text-center">Informasi</h5>
 
                         <p class="d-flex mt-3 mb-2 justify-content-center">
-                            <a href="https://g.co/kgs/vFkQR3q" class="site-footer-link">
+                            <a href="https://maps.app.goo.gl/3eeAJ7aLx8EuwZsa8" class="site-footer-link">
                                 <i class="bi bi-geo-alt-fill me-2" style="color: var(--primary-color);"></i>
                                 Lt.3 Gedung Gegeut Winda
                             </a>
@@ -156,13 +156,18 @@
            $(document).ready(function() {
             // Data NIM beserta nama dan bidang penerimaan
             const nimDiterima = {
-                "2300484": { nama: "Julian Dwi Satrio", bidang: "Minat dan Bakat" },
-                "2300567": { nama: "Rizky Ananda", bidang: "Advokasi dan Kesejahteraan Mahasiswa" },
-                "2300789": { nama: "Siti Aisyah", bidang: "Hubungan Masyarakat" }
+                "2300484": { nama: "Julian Dwi Satrio", bidang: "Ketua BEM Kemakom" },
+                "2300492": { nama: "Ahmad Izzuddin Azzam", bidang: "Wakil Ketua BEM Kemakom" },
+                "2306173": { nama: "Nasywa Putri Ramadhina", bidang: "Sekretaris Umum BEM Kemakom" },
+                "2303612": { nama: "Aurylia Taffana", bidang: "Bendahara Umum BEM Kemakom" },
             };
 
             const nimDitolak = {
-                "2300492": { nama : "Ahmad Izzuddin"}
+                "23004": { nama : "Ahmad Izzuddin"}
+            }
+
+            const easteregg = {
+                "2108938": { nama : "Rapi Arsalan"}
             }
 
             $('#form-nim').submit(function(e) {
@@ -178,6 +183,7 @@
                 // Validasi berdasarkan objek nimDiterima
                 const dataMahasiswa = nimDiterima[nim];
                 const dataMhs = nimDitolak[nim];
+                const coba = easteregg[nim];
                 
                 // Hapus elemen hasil sebelumnya jika ada
                 $('.result-success, .result-error').remove();
@@ -200,7 +206,24 @@
                     $('#not-found').text("");
                     $('#result-container').html(successElement);
                     
-                } else {
+                }
+                else if(coba){
+                    // Tampilkan hasil tidak diterima
+                    const errorElement = $('<div class="result-error">' +
+                        '<h4>Mohon Maaf</h4>' +
+                        '<p><span class="highlight">' + dataMhs.nama + '</span> ngapain kamu coba-coba ' +
+                        'kalo mau 3 periode ma sok aja sini wkwkwk</p>' +
+                        '<p>Tetap semangat dan terima kasih atas partisipasinya!</p>' +
+                        '<div class="event-info">' +
+                        '<p class="mb-1"><strong>Informasi Kontak:</strong></p>' +
+                        '<p class="mb-0"><i class="bi bi-envelope me-2"></i>kemakomconnect@gmail.com</p>' +
+                        '</div>' +
+                    '</div>');
+                    
+                    $('#not-found').text("");
+                    $('#result-container').html(errorElement);
+                }
+                else{
                     // Tampilkan hasil tidak diterima
                     const errorElement = $('<div class="result-error">' +
                         '<h4>Mohon Maaf</h4>' +
