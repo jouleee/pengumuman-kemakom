@@ -17,9 +17,135 @@
         <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
         <link href="assets/css/style.css" rel="stylesheet">
 
+        <style>
+
+            .navbar {
+                background-color: rgba(255,255,255,0.95);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                padding: 15px 0;
+            }
+
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+
+            .navbar-brand img {
+                height: 50px;
+                margin-right: 15px;
+            }
+
+            .countdown-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, var(--primary-color), #6a11cb);
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                overflow: hidden;
+            }
+
+            .countdown-overlay::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                animation: pulse 5s infinite alternate;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(0.95);
+                }
+                100% {
+                    transform: scale(1.05);
+                }
+            }
+
+            .countdown-timer {
+                background: rgba(255,255,255,0.1);
+                border-radius: 20px;
+                padding: 30px;
+                display: flex;
+                gap: 20px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+
+            .countdown-timer > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 100px;
+            }
+
+            .countdown-timer > div > div {
+                font-size: 4rem;
+                font-weight: 700;
+                color: white;
+                text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            }
+
+            .countdown-timer span {
+                font-size: 1rem;
+                color: rgba(255,255,255,0.7);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-top: 10px;
+            }
+
+            .countdown-overlay h2 {
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+                font-weight: 700;
+                text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            }
+
+            .countdown-overlay p {
+                margin-top: 20px;
+                color: rgba(255,255,255,0.8);
+                font-size: 1.1rem;
+            }
+        </style>
+
     </head>
     
     <body>
+        <div id="countdown-overlay" class="countdown-overlay">
+            <h2>Pengumuman Akan Dibuka Pada</h2>
+            <div id="countdown-timer" class="countdown-timer">
+                <div>
+                    <div id="days">00</div>
+                    <span>Hari</span>
+                </div>
+                <div>
+                    <div id="hours">00</div>
+                    <span>Jam</span>
+                </div>
+                <div>
+                    <div id="minutes">00</div>
+                    <span>Menit</span>
+                </div>
+                <div>
+                    <div id="seconds">00</div>
+                    <span>Detik</span>
+                </div>
+            </div>
+            <p>Mohon tunggu hingga 6 Maret 2025 pukul 08:00 WIB</p>
+        </div>
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -154,42 +280,42 @@
         <script src="assets/js/animated-headline.js"></script>
         <script>
            $(document).ready(function() {
-            // Data NIM beserta nama dan bidang penerimaan
-            const nimDiterima = {
-                "2300484": { nama: "Julian Dwi Satrio", bidang: "Ketua BEM Kemakom" },
-                "2300492": { nama: "Ahmad Izzuddin Azzam", bidang: "Wakil Ketua BEM Kemakom" },
-                "2306173": { nama: "Nasywa Putri Ramadhina", bidang: "Sekretaris Umum BEM Kemakom" },
-                "2303612": { nama: "Aurylia Taffana", bidang: "Bendahara Umum BEM Kemakom" },
-                "2308372": { nama: "Muhammad Ridho Fajri", bidang: "Ketua Divisi Komunikasi, Teknologi, Informasi" },
-                "2302013": { nama: "Nabila Hermala Putri", bidang: "Ketua Biro Komunikasi" },
-                "2310996": { nama: "Naufal Najib Arif", bidang: "Ketua Biro Teknologi" },
-                "2305309": { nama: "Rasendriya Andhika", bidang: "Ketua Biro Desain" },
-                "2300408": { nama: "Cynthia Hasna Mazaya", bidang: "Ketua Biro Media" },
-                "2309549": { nama: "Hafizh Rasyid Ridha", bidang: "Ketua Divisi Pendidikan dan Pelatihan" },
-                "2306838": { nama: "Tyka Yulistriany", bidang: "Ketua Biro Manajemen Perlombaan" },
-                "2309131": { nama: "Alya Nurul Hanifah", bidang: "Ketua Biro Pendidikan dan Pelatihan" },
-                "2310850": { nama: "Muhammad Naufal Arbanin", bidang: "Ketua Divisi Penyaluran Minat dan Bakat" },
-                "2305056": { nama: "Syifa Nur Azizah", bidang: "Ketua Biro Digital" },
-                "2303558": { nama: "Dewi Yanti", bidang: "Ketua Biro Seni dan Keakraban" },
-                "2311174": { nama: "Muhammad Alfi Fariz", bidang: "Ketua Biro Olahraga" },
-                "2312265": { nama: "Tsalitsa Nuril Syabina", bidang: "Ketua Divisi Advokasi, Sosial dan Politik" },
-                "2300414": { nama: "Rahmat Taufik Al Hidayah", bidang: "Ketua Biro Sosial dan Politik" },
-                "2309179": { nama: "Ghefira Azka Fatharani", bidang: "Ketua Divisi Kerohanian" },
-                "2304041": { nama: "Rina Tri Agustianis", bidang: "Ketua Biro Syiar dan Dakwah" },
-                "2305680": { nama: "Aam Trianawati", bidang: "Ketua Biro Pengembangan Karakter" },
-                "2304742": { nama: "Muhammad Akhtar Rizki Ramadha", bidang: "Ketua Divisi Pengembangan Organisasi" },
-                "2301596": { nama: "Ahmad Rayki Pahlevi", bidang: "Ketua Biro Penelitian dan Pengembangan" },
-                "2300498": { nama: "Alvyn Hadrian Nugraha", bidang: "Ketua Divisi Ekonomi dan Bisnis" },
-                "2300822": { nama: "Marifatu Ambiya", bidang: "Ketua Biro Pemasaran" },
-                "2309844": { nama: "Sandy Achmad Nugraha", bidang: "Ketua Biro Bisnis dan Mitra" },
-            };
+            // Set the date we're counting down to
+            const countdownDate = new Date("March 6, 2025 08:00:00").getTime();
+
+            // Update the countdown every 1 second
+            const countdownFunction = setInterval(function() {
+                // Get the current date and time
+                const now = new Date().getTime();
+
+                // Find the distance between now and the countdown date
+                const distance = countdownDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown
+                $('#days').text(days < 10 ? '0' + days : days);
+                $('#hours').text(hours < 10 ? '0' + hours : hours);
+                $('#minutes').text(minutes < 10 ? '0' + minutes : minutes);
+                $('#seconds').text(seconds < 10 ? '0' + seconds : seconds);
+
+                // If the countdown is finished, remove the overlay
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    $('#countdown-overlay').remove();
+                    $('#nim').prop('disabled', false);
+                    $('button[type="submit"]').prop('disabled', false);
+                }
+            }, 1000);
 
             const nimDitolak = {
-                "23004": { nama : "Ahmad Izzuddin"}
             }
 
             const easteregg = {
-                "2108938": { nama : "Rapi Arsalan"}
             }
 
             $('#form-nim').submit(function(e) {
@@ -205,7 +331,7 @@
                 // Validasi berdasarkan objek nimDiterima
                 const dataMahasiswa = nimDiterima[nim];
                 const dataMhs = nimDitolak[nim];
-                const coba = easteregg[nim];
+                const dataNyoba = easteregg[nim];
                 
                 // Hapus elemen hasil sebelumnya jika ada
                 $('.result-success, .result-error').remove();
@@ -216,7 +342,7 @@
                         '<h4>Selamat, ' + dataMahasiswa.nama + '!</h4>' +
                         '</span> dinyatakan <strong>DITERIMA</strong> ' +
                         'sebagai pengurus BEM Kemakom periode 2025/2026.</p>' +
-                        '<p><strong> Kamu diterima di Divisi:</strong> ' + dataMahasiswa.bidang + '</p>' +
+                        // '<p><strong> Kamu diterima di Divisi:</strong> ' + dataMahasiswa.bidang + '</p>' +
                         '<div class="event-info">' +
                         '<p class="mb-1"><strong>Informasi Pelantikan BEM KEMAKOM:</strong></p>' +
                         '<p class="mb-1"><i class="bi bi-calendar-event me-2"></i>Jumat, 7 Maret 2025</p>' +
@@ -229,7 +355,7 @@
                     $('#result-container').html(successElement);
                     
                 }
-                else if(coba){
+                else if(dataNyoba){
                     // Tampilkan hasil tidak diterima
                     const errorElement = $('<div class="result-bug">' +
                         '<h4>Mohon Maaf</h4>' +
