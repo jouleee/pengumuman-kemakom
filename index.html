@@ -171,7 +171,22 @@
                 .countdown-timer span {
                     font-size: 0.8rem;
                 }
+
             }
+            .result-not-found {
+                background-color: #f8f9fa;
+                border-left: 5px solid #6c757d;
+                padding: 20px;
+                margin-top: 30px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .result-not-found h4 {
+                color: #6c757d;
+                margin-bottom: 15px;
+            }
+            
         </style>
 
     </head>
@@ -197,7 +212,7 @@
                     <span>Detik</span>
                 </div>
             </div>
-            <p>Mohon tunggu hingga 6 Maret 2025 pukul 08:00 WIB</p>
+            <p>Mohon tunggu hingga 7 Maret 2025 pukul 15:30 WIB</p>
         </div>
 
         <nav class="navbar navbar-expand-lg">
@@ -334,7 +349,7 @@
         <script>
            $(document).ready(function() {
             // Set the date we're counting down to
-            const countdownDate = new Date("March 6, 2025 08:00:00").getTime();
+            const countdownDate = new Date("March 7, 2025 15:45:00").getTime();
 
             // Update the countdown every 1 second
             const countdownFunction = setInterval(function() {
@@ -366,101 +381,111 @@
             }, 1000);
 
             const nimDiterima = {
-                "2300484": { nama: "Julian Dwi Satrio" },
-                "2300492": { nama: "Ahmad Izzuddin Azzam" },
-                "2306173": { nama: "Nasywa Putri Ramadhina" },
-                "2303612": { nama: "Aurylia Taffana" },
-                "2308372": { nama: "Muhammad Ridho Fajri" },
-                "2302013": { nama: "Nabila Hermala Putri" },
-                "2310996": { nama: "Naufal Najib Arif" },
-                "2305309": { nama: "Rasendriya Andhika" },
-                "2300408": { nama: "Cynthia Hasna Mazaya" },
-                "2309549": { nama: "Hafizh Rasyid Ridha" },
-                "2306838": { nama: "Tyka Yulistriany" },
-                "2309131": { nama: "Alya Nurul Hanifah" },
-                "2310850": { nama: "Muhammad Naufal Arbanin" },
-                "2305056": { nama: "Syifa Nur Azizah" },
-                "2303558": { nama: "Dewi Yanti" },
-                "2311174": { nama: "Muhammad Alfi Fariz" },
-                "2312265": { nama: "Tsalitsa Nuril Syabina" },
-                "2300414": { nama: "Rahmat Taufik Al Hidayah" },
-                "2309179": { nama: "Ghefira Azka Fatharani" },
-                "2304041": { nama: "Rina Tri Agustianis" },
-                "2305680": { nama: "Aam Trianawati" },
-                "2304742": { nama: "Muhammad Akhtar Rizki Ramadha" },
-                "2301596": { nama: "Ahmad Rayki Pahlevi" },
-                "2300498": { nama: "Alvyn Hadrian Nugraha" },
-                "2300822": { nama: "Marifatu Ambiya" },
-                "2309844": { nama: "Sandy Achmad Nugraha" },
-                "2408581": { nama: "Dhea Rizki Amalia" },
-                "2408515": { nama: "Nur Abdillah Ifhamuddin" },
-                "2405506": { nama: "Virgiani Azali Ishmah" },
-                "2405436": { nama: "Kaisya Azzahra Salsabila" },
-                "2400494": { nama: "Khairatul Husna Tartila" },
-                "2406682": { nama: "Salsabila Ramadhani Hasan" },
-                "2411481": { nama: "Muhammad Fittra Novria Rizky" },
-                "2400076": { nama: "Kayla Emira Qonitah" },
-                "2405158": { nama: "Fakhira Zaafarani Husna" },
-                "2404286": { nama: "Daffa Dhiyaa Candra" },
-                "2407671": { nama: "Najmi Nur Layaliani" },
-                "2405572": { nama: "Belva Risma Aydina" },
-                "2408249": { nama: "Hanif Habiburrahman" },
-                "2403463": { nama: "Muhammad Romdhon Indra Galuh" },
-                "2403800": { nama: "Nayla Tiani Putri" },
-                "2309648": { nama: "Naufal Fakhri Al-Najieb" },
-                "2401659": { nama: "Afni Alya Putri" },
-                "2408352": { nama: "Naura Nur Faizah" },
-                "2402238": { nama: "Ayu Mutia" },
-                "2401265": { nama: "Ariel Hidayatul Faqih" },
-                "2404193": { nama: "Khusnul Nadhiva" },
-                "2401854": { nama: "Nayla Amelia Zahra" },
-                "2401322": { nama: "Dewa Ahmad Septriansyah" },
-                "2407469": { nama: "Rifa Nur Habibah" },
-                "2405170": { nama: "Mochammad Azka Basria" },
-                "2401539": { nama: "Muhammad Adwar Salman" },
-                "2400382": { nama: "Muhiban Fadlan Nursaid" },
-                "2400655": { nama: "Nur Azizah Santoso" },
-                "2409514": { nama: "Raisyah Alika Salam" },
-                "2404626": { nama: "Dzaky Prima Yoga" },
-                "2406964": { nama: "Duan Jhon Steven Sinaga" },
-                "2402277": { nama: "Ryan Rahmawan" },
-                "2402567": { nama: "Niha April Miani" },
-                "2405303": { nama: "Nopsandi Natanael" },
-                "2400325": { nama: "Zulfian Rais Almanshur" },
-                "2409829": { nama: "Rafi Ahmad Al Farisi" },
-                "2400742": { nama: "Julia Rahmawati" },
-                "2401626": { nama: "Firda Ridzki Utami" },
-                "2408622": { nama: "Iqbal Rizky Maulana" },
-                "2410024": { nama: "Farah Maulida" },
-                "2408614": { nama: "Gherry Alviart" },
-                "2400456": { nama: "Vivi Agustina Suryana" },
-                "2410393": { nama: "Najmi Alifah Hilmiya" },
-                "2405916": { nama: "Raffie Arsy Ananda" },
-                "2400297": { nama: "Muhammad Rangga Nur Praditha" },
-                "2407792": { nama: "Mahendra Devid Putra Anwar" },
-                "2404913": { nama: "Dzaka Musyaffa Hidayat" },
-                "2403086": { nama: "Shakila Aulia Nurrul Rohman" },
-                "2410975": { nama: "Putri Ramadhani" },
-                "2408647": { nama: "Muhammad Maulana Adrian" },
-                "2405981": { nama: "Rifa Muhammad Danindra" },
-                "2407142": { nama: "Mohammad Mudrik Mujayyin" },
-                "2410946": { nama: "Naufal Rizki Rabbani" },
-                "2405885": { nama: "Diva Wahyu Nugraha" },
-                "2405787": { nama: "Naufal Zahid" },
-                "2408095": { nama: "Nadzalla Diva Asmara Sutedja" },
-                "2408680": { nama: "Raihan Wira Saputra" },
-                "2408495": { nama: "Selika Kanajmi" },
-                "2407846": { nama: "Dicka Fahrunaldo" },
-                "2402353": { nama: "Dewi Mustika Hidayah" },
-                "2400758": { nama: "Fedora Ariefa Ardian" },
-                "2400146": { nama: "Rianti Agustini" },
-                "2405380": { nama: "Dhendi Syafa Athallah Putra" },
-                "2406627": { nama: "Misyel Aulia Azahara" },
-                "2406635": { nama: "Lutfiyanti Hegar Astuti" },
-                "2405216": { nama: "Muhammad Mirza Fayzul Haq"},
-                "2407915": { nama: "Nafis Asyakir Anjar"},
-                "2301410": { nama: "Nuansa Bening Aura Jelita"},
-                "2310083": { nama: "Muhammad Daffa Rizmawan Harahap"},
+                "2300484": { "nama": "Julian Dwi Satrio", "bidang": "Ketua BEM" },
+                "2300492": { "nama": "Ahmad Izzuddin Azzam", "bidang": "Wakil Ketua BEM" },
+                "2306173": { "nama": "Nasywa Putri Ramadhina", "bidang": "Sekretaris Umum 1" },
+                "2407469": { "nama": "Rifa Nur Habibah", "bidang": "Sekretaris Umum 2" },
+                "2303612": { "nama": "Aurylia Taffana", "bidang": "Bendahara Umum 1" },
+                "2405506": { "nama": "Virgiani Azali Ishmah", "bidang": "Bendahara Umum 2" },
+                "2312265": { "nama": "Tsalitsa Nuril Syabina", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2300414": { "nama": "Rahmat Taufik Al Hidayah", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2301333": { "nama": "Zaenal Rifa'i Saepudin", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2408249": { "nama": "Hanif Habiburrahman", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2309648": { "nama": "Naufal Fakhri Al-Najieb", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2402567": { "nama": "Niha April Miani", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2400325": { "nama": "Zulfian Rais Almanshur", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2403086": { "nama": "Shakila Aulia Nurrul Rohman", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2410975": { "nama": "Putri Ramadhani", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2407142": { "nama": "Mohammad Mudrik Mujayyin", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2410946": { "nama": "Naufal Rizki Rabbani", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2305997": { "nama": "Muhamad Wahyu Darmawan", "bidang": "Divisi Advokasi Sosial Politik" },
+                "2300498": { "nama": "Alvyn Hadrian Nugraha", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2300822": { "nama": "Ma'rifatu Ambiya", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2309844": { "nama": "Sandy Achmad Nugraha", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2311697": { "nama": "Dinda Natania Sugara", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2407671": { "nama": "Najmi Nur Layaliani", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2403800": { "nama": "Nayla Tiani Putri", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2402238": { "nama": "Ayu Mutia", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2402277": { "nama": "Ryan Rahmawan", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2409829": { "nama": "Rafi Ahmad Al Farisi", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2405916": { "nama": "Raffie Arsy Ananda", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2400758": { "nama": "Fedora Ariefa Ardian", "bidang": "Divisi Ekonomi dan Bisnis" },
+                "2309179": { "nama": "Ghefira Azka Fatharani", "bidang": "Divisi Kerohanian" },
+                "2305680": { "nama": "Aam Trianawati", "bidang": "Divisi Kerohanian" },
+                "2304041": { "nama": "Rina Tri Agustianis", "bidang": "Divisi Kerohanian" },
+                "2406964": { "nama": "Duan Jhon Steven Sinaga", "bidang": "Divisi Kerohanian" },
+                "2408647": { "nama": "Muhammad Maulana Adrian", "bidang": "Divisi Kerohanian" },
+                "2400146": { "nama": "Rianti Agustini", "bidang": "Divisi Kerohanian" },
+                "2406627": { "nama": "Misyel Aulia Azahara", "bidang": "Divisi Kerohanian" },
+                "2406635": { "nama": "Lutfiyanti Hegar Astuti", "bidang": "Divisi Kerohanian" },
+                "2404193": { "nama": "Khusnul Nadhiva", "bidang": "Divisi Kerohanian" },
+                "2405303": { "nama": "Nopsandi Natanael", "bidang": "Divisi Kerohanian" },
+                "2400742": { "nama": "Julia Rahmawati", "bidang": "Divisi Kerohanian" },
+                "2404151": { "nama": "Siti Agisna", "bidang": "Divisi Kerohanian" },
+                "2308372": { "nama": "Muhammad Ridho Fajri", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2300408": { "nama": "Cynthia Hasna Mazaya", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2302013": { "nama": "Nabila Hermala Putri", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2310996": { "nama": "Naufal Najib Arif", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2305309": { "nama": "Rasendriya Andhika", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2405436": { "nama": "Kaisya Azzahra Salsabila", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2411481": { "nama": "Muhammad Fittra Novria Rizky", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2401854": { "nama": "Nayla Amelia Zahra", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2405170": { "nama": "Mochammad Azka Basria", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2400382": { "nama": "Muhiban Fadlan Nursaid", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2400655": { "nama": "Nur Azizah Santoso", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2407792": { "nama": "Mahendra Devid Putra Anwar", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2404913": { "nama": "Dzaka Musyaffa Hidayat", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2407846": { "nama": "Dicka Fahrunaldo", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2402353": { "nama": "Dewi Mustika Hidayah", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2405380": { "nama": "Dhendi Syafa Athallah Putra", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2310083": { "nama": "Muhammad Daffa Rizmawan Harahap", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2300990": { "nama": "Rakha Akhyara", "bidang": "Divisi Komunikasi Teknologi dan Informasi" },
+                "2309549": { "nama": "Hafizh Rasyid Ridha", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2309131": { "nama": "Alya Nurul Hanifah", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2306838": { "nama": "Tyka Yulistriany", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2404286": { "nama": "Daffa Dhiyaa Candra", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2400456": { "nama": "Vivi Agustina Suryana", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2400297": { "nama": "Muhammad Rangga Nur Praditha", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2405981": { "nama": "Rifa Muhammad Danindra", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2405787": { "nama": "Naufal Zahid", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2408095": { "nama": "Nadzalla Diva Asmara Sutedja", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2408495": { "nama": "Selika Kanajmi", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2407915": { "nama": "Nafis Asyakir Anjar", "bidang": "Divisi Pendidikan dan Pelatihan" },
+                "2304742": { "nama": "Muhammad Akhtar Rizki Ramadha", "bidang": "Divisi Pengembangan Organisasi" },
+                "2301596": { "nama": "Ahmad Rayki Pahlevi", "bidang": "Divisi Pengembangan Organisasi" },
+                "2308107": { "nama": "Vina Salima Mujahida", "bidang": "Divisi Pengembangan Organisasi" },
+                "2304617": { "nama": "Salwa Khairunnisa", "bidang": "Divisi Pengembangan Organisasi" },
+                "2307254": { "nama": "Amanda Devika Hakim", "bidang": "Divisi Pengembangan Organisasi" },
+                "2309255": { "nama": "Muhammad Subhan Zaenul Rofi", "bidang": "Divisi Pengembangan Organisasi" },
+                "2408581": { "nama": "Dhea Rizki Amalia", "bidang": "Divisi Pengembangan Organisasi" },
+                "2400494": { "nama": "Khairatul Husna Tartila", "bidang": "Divisi Pengembangan Organisasi" },
+                "2405158": { "nama": "Fakhira Zaafarani Husna", "bidang": "Divisi Pengembangan Organisasi" },
+                "2405572": { "nama": "Belva Risma Aydina", "bidang": "Divisi Pengembangan Organisasi" },
+                "2403463": { "nama": "Muhammad Romdhon Indra Galuh", "bidang": "Divisi Pengembangan Organisasi" },
+                "2401265": { "nama": "Ariel Hidayatul Faqih", "bidang": "Divisi Pengembangan Organisasi" },
+                "2401322": { "nama": "Dewa Ahmad Septriansyah", "bidang": "Divisi Pengembangan Organisasi" },
+                "2404626": { "nama": "Dzaky Prima Yoga", "bidang": "Divisi Pengembangan Organisasi" },
+                "2401626": { "nama": "Firda Ridzki Utami", "bidang": "Divisi Pengembangan Organisasi" },
+                "2410024": { "nama": "Farah Maulida", "bidang": "Divisi Pengembangan Organisasi" },
+                "2410393": { "nama": "Najmi Alifah Hilmiya", "bidang": "Divisi Pengembangan Organisasi" },
+                "2409461": { "nama": "Muhammad Raditya Santosa", "bidang": "Divisi Pengembangan Organisasi" },
+                "2405216": { "nama": "Muhammad Mirza Fayzul Haq", "bidang": "Divisi Pengembangan Organisasi" },
+                "2310850": { "nama": "Muhammad Naufal Arbanin", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2303558": { "nama": "Dewi Yanti", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2311174": { "nama": "Muhammad Alfi Fariz", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2305056": { "nama": "Syifa Nur Azizah Suhud", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2408515": { "nama": "Nur Abdillah Ifhamuddin", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2406682": { "nama": "Salsabila Ramadhani Hasan", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2400076": { "nama": "Kayla Emira Qonitah", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2401659": { "nama": "Afni Alya Putri", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2408352": { "nama": "Naura Nur Faizah", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2401539": { "nama": "Muhammad Adwar Salman", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2409514": { "nama": "Raisyah Alika Salam", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2408622": { "nama": "Iqbal Rizky Maulana", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2408614": { "nama": "Gherry Alviart", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2405885": { "nama": "Diva Wahyu Nugraha", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2408680": { "nama": "Raihan Wira Saputra", "bidang": "Divisi Penyaluran Minat dan Bakat" },
+                "2301410": { "nama": "Nuansa Bening Aura Jelita", "bidang": "Divisi Penyaluran Minat dan Bakat" }
             };
 
             const nimDitolak = {
@@ -473,7 +498,7 @@
                 "2108938": { nama: "Rafi Arsalan"},
                 "2101103": { nama: "Rifqi Fajar Indrayadi"},
                 "2102665": { nama: "M. Cahyana Bintang Fajar"},
-
+                "2300456": { nama: "Abdurrahman Al Ghifari"}
             }
 
             $('#form-nim').submit(function(e) {
@@ -494,27 +519,21 @@
                 $('.result-success, .result-error').remove();
                 
                 if (dataMahasiswa) {
-                    // Tampilkan hasil diterima
+                    // Tampilkan hasil diterima dengan info bidang
                     const successElement = $('<div class="result-success">' +
                         '<h4>Selamat, ' + dataMahasiswa.nama + '!</h4>' +
                         '<p>Anda dinyatakan <strong>DITERIMA</strong> ' +
                         'sebagai pengurus BEM Kemakom periode 2025/2026.</p>' +
                         '<div class="event-info">' +
-                        '<p class="mb-1"><strong>Informasi Pelantikan BEM KEMAKOM:</strong></p>' +
-                        '<p class="mb-1"><i class="bi bi-calendar-event me-2"></i>Jumat, 7 Maret 2025</p>' +
-                        '<p class="mb-1"><i class="bi bi-clock me-2"></i>Pukul 15.30 WIB</p>' +
-                        '<p class="mb-0"><i class="bi bi-geo-alt me-2"></i>FPMIPA B 205</p>' +
-                        '</div>' +
-                        '<div class="dresscode-info">' +
-                        '<p class="mb-1"><strong>Dresscode:</strong></p>' +
-                        '<p class="mb-0"><i class="bi bi-shirt me-2"></i>Kemeja Himpunan</p>' +
+                        '<p class="mb-1"><strong>Kamu Diterima di Divisi:</strong></p>' +
+                        '<p class="mb-1"><i class="bi bi-briefcase me-2"></i>' + dataMahasiswa.bidang + '</p>' +
                         '</div>' +
                     '</div>');
                     
                     $('#not-found').text("");
                     $('#result-container').html(successElement);
                 }
-                else if(dataMhs){
+                else if(dataMhs) {
                     // Tampilkan hasil tidak diterima
                     const errorElement = $('<div class="result-error">' +
                         '<h4>Mohon Maaf</h4>' +
@@ -529,6 +548,21 @@
                     
                     $('#not-found').text("");
                     $('#result-container').html(errorElement);
+                } 
+                else {
+                    // Tampilkan pesan untuk NIM yang tidak ditemukan
+                    const notFoundElement = $('<div class="result-not-found">' +
+                        '<h4>NIM Tidak Ditemukan</h4>' +
+                        '<p>Maaf, NIM <strong>' + nim + '</strong> tidak terdaftar dalam database kami.</p>' +
+                        '<p>Silakan periksa kembali NIM yang Anda masukkan.</p>' +
+                        '<div class="event-info">' +
+                        '<p class="mb-1"><strong>Informasi Kontak Panitia:</strong></p>' +
+                        '<p class="mb-0"><i class="bi bi-envelope me-2"></i>kemakomconnect@gmail.com</p>' +
+                        '</div>' +
+                    '</div>');
+                    
+                    $('#not-found').text("");
+                    $('#result-container').html(notFoundElement);
                 }
                 
                 // Scroll ke hasil
